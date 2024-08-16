@@ -8,6 +8,6 @@ module.exports = defineConfig({
     viewportHeight: 550,
     viewportWidth: 660,
     experimentalStudio: true,
-    pageLoadTimeout: 90000
+    pageLoadTimeout: 80000
   },
 });
