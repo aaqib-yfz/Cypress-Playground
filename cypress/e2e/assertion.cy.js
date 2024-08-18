@@ -24,7 +24,22 @@ describe('Assertion',()=>{
         cy.get('.oxd-input.oxd-input--active[ name = \'username\']').type('Admin')
         cy.get('input.oxd-input.oxd-input--active[name = \'password\']').type('admin123')
         cy.get('button.oxd-button.oxd-button--medium.oxd-button--main.orangehrm-login-button').click()
+    
+        let expName = 'abc';
+
+        cy.get('p.oxd-userdropdown-name').then( (x)=>{
+        let actName = x.text()
+        //BDD style 
+        expect( actName ).to.equal(expName)
+        expect(actName).to.not.equal(expName)
+        
+        //TDD style
+        assert.equal(actName,expName)
+        assert.not.equal(actName,expName)
+    })
     })
 
+
+    
 }
 )
