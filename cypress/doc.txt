@@ -1,0 +1,9 @@
+-> impilict assertions 
+    they are built in
+    should
+    and 
+
+-> Explicit assertions
+
+    expect 
+    assert 
