@@ -2,8 +2,15 @@
     they are built in
     should
     and 
-
+    -> Parameters
+            eq
+            contain
+            include
+            exist
+            have.length
+            have.value
+            be.visible
 -> Explicit assertions
 
-    expect 
-    assert 
+    expect - BDD (behavioural driven development) approach
+    assert - TDD (test driven development) approach
