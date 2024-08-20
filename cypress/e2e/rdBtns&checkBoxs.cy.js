@@ -16,6 +16,8 @@ describe('Check UI elements',()=>{
         cy.get(':nth-child(1) > .element-list > .menu-list > #item-1').click()
         cy.get('.rct-checkbox').should('be.visible')
         cy.get('#tree-node-home').check({force:true}).should('be.checked')
+
+        cy.get('#tree-node-home').first().check().should('be.checked')
     })
     
 })
