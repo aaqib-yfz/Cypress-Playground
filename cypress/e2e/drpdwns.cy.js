@@ -17,6 +17,7 @@ describe(' handling dropdowns uwu', () => {
     it('Auto selected',()=>{
         cy.visit('https://www.wikipedia.org/')
         cy.get('#searchInput').type('Peshawar')
+        cy.get('.suggestion-title').contains('Peshawar District').click()
     })
 })
 //.select2-search__field
