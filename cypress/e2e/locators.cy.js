@@ -5,5 +5,7 @@ it( 'locs test', ()=>{
     cy.get('input#nav-search-submit-button').click()
     cy.get('span.a-size-base.a-color-secondary.a-text-normal').contains('product') //assertion~
 })
+
+
 }
 )
