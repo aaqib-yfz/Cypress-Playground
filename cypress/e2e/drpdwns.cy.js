@@ -1,16 +1,22 @@
 /// <reference types = "cypress"/>
 
 describe(' handling dropdowns uwu', () => {
-    // it('with select', () => {
-    //     cy.visit('https://www.zoho.com/commerce/free-demo.html')
-    //     cy.get('select#zcf_address_country').select('Italy').should('have.value', 'Italy')
-    //     cy.get('.chk_bx').check().should('be.checked')
-    // })
+    it.skip('with select', () => {
+        cy.visit('https://www.zoho.com/commerce/free-demo.html')
+        cy.get('select#zcf_address_country').select('Italy').should('have.value', 'Italy')
+        cy.get('.chk_bx').check().should('be.checked')
+    })
 
-    it('without select',()=>{
+    it.skip('without select',()=>{
         cy.visit('https://www.dummyticket.com/dummy-ticket-for-visa-application/')
         cy.get('#select2-billing_country-container').click()
-        cy.get('.select2-search__field').type('Italy')
+        cy.get('.select2-search__field').type('Italy').type('{enter}')
+        cy.get('#select2-billing_country-container').should('have.text','Italy')
+    })
+
+    it('Auto selected',()=>{
+        cy.visit('https://www.wikipedia.org/')
+        cy.get('#searchInput').type('Peshawar')
     })
 })
 //.select2-search__field
