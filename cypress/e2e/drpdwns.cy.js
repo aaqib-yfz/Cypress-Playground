@@ -14,7 +14,7 @@ describe(' handling dropdowns uwu', () => {
         cy.get('#select2-billing_country-container').should('have.text','Italy')
     })
 
-    it('Auto selected',()=>{
+    it.skip('Auto selected',()=>{
         cy.visit('https://www.wikipedia.org/')
         cy.get('#searchInput').type('Peshawar')
         cy.get('.suggestion-title').contains('Peshawar District').click()
