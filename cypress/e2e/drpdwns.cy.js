@@ -19,5 +19,10 @@ describe(' handling dropdowns uwu', () => {
         cy.get('#searchInput').type('Peshawar')
         cy.get('.suggestion-title').contains('Peshawar District').click()
     })
+
+    it( 'Dynamic',()=>{
+        cy.visit('https://www.google.com/')
+        cy.get('#APjFqb').type('Cypress Automation')
+    })
 })
 //.select2-search__field
