@@ -22,7 +22,13 @@ describe(' handling dropdowns uwu', () => {
 
     it( 'Dynamic',()=>{
         cy.visit('https://www.google.com/')
-        cy.get('#APjFqb').type('Cypress Automation')
+        cy.get('#APjFqb').type('cypress automation')
+        cy.wait(3000)
+        cy.get('div.wM6W7d>span').each(($el,index,$list)=>{
+            if($el.text()=='cypress automation tutorial'){
+                cy.wrap($el).click()
+            }
+        })
     })
 })
 //.select2-search__field
