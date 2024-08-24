@@ -20,7 +20,7 @@ describe(' handling dropdowns uwu', () => {
         cy.get('.suggestion-title').contains('Peshawar District').click()
     })
 
-    it( 'Dynamic',()=>{
+    it.skip( 'Dynamic',()=>{
         cy.visit('https://www.google.com/')
         cy.get('#APjFqb').type('cypress automation')
         cy.wait(3000)
@@ -28,6 +28,18 @@ describe(' handling dropdowns uwu', () => {
             if($el.text()=='cypress automation tutorial'){
                 cy.wrap($el).click()
             }
+        })
+    })
+
+    it('duck',()=>{
+        cy.visit('https://duckduckgo.com/')
+        cy.get('input#searchbox_input').type('dollar to')
+        cy.wait(3000)
+        cy.get('.searchbox_suggestion__csrUQ>span').each(($el,index,$list)=>{
+            if($el.text() == 'dollar to pkr'){
+                cy.wrap($el).click()
+            }
+            
         })
     })
 })
