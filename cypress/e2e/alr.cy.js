@@ -10,7 +10,7 @@
 
 describe('Alert',()=>{
     //simple alr
-    it('normal alrt', ()=>{
+    it.skip('normal alrt', ()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
         cy.get('button[ onclick =\'jsAlert()\']').click();
         
@@ -19,6 +19,30 @@ describe('Alert',()=>{
         })
         //alert automatically closed by cypress
         cy.get('#result').should('have.text','You successfully clicked an alert')
+    })
+
+
+    //confirmation alr
+    it('confirmation alert -ok btn',()=>{
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
+        cy.get('button[ onclick =\'jsConfirm()\']').click();
+
+        cy.on('window:confirm',(text)=>{
+            expect(text).to.contain('I am a JS Confirm')
+        })
+        
+        cy.get('#result').should('have.text','You clicked: Ok')
+    })
+
+    it.only('confirmation alert - cancel btn',()=>{
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
+        cy.get('button[ onclick =\'jsConfirm()\']').click();
+
+        cy.on('window:confirm',(text)=>{
+            expect(text).to.contain('I am a JS Confirm')
+        })
+        cy.on('window:confirm',()=>false);
+        cy.get('#result').should('have.text','You clicked: Cancel')
     })
 }
 )
