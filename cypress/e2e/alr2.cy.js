@@ -22,10 +22,19 @@ describe('Alerts Prac',()=>{
         });
     });
 
-    it.only('confirm cancel',()=>{
+    it('confirm cancel',()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
         cy.get('button[onClick = \'jsConfirm()\']').click();
         cy.on('window:confirm',()=>false);
         cy.get('#result').should('have.text','You clicked: Cancel');
+    })
+
+    it.only('prompt',()=>{
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
+        cy.window().then((win)=>{
+            cy.stub(win,'prompt').returns('hello g')
+        });
+        cy.get('button[onClick = \'jsPrompt()\']').click();
+        
     })
 })
