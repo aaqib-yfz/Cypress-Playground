@@ -29,7 +29,7 @@ describe('Alerts Prac',()=>{
         cy.get('#result').should('have.text','You clicked: Cancel');
     })
 
-    it.only('prompt',()=>{
+    it('prompt',()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
         cy.window().then((win)=>{
             cy.stub(win,'prompt').returns('hello g')
@@ -37,4 +37,10 @@ describe('Alerts Prac',()=>{
         cy.get('button[onClick = \'jsPrompt()\']').click();
         
     })
+
+    it.only('auth',()=>{
+        cy.visit('https://admin:admin@the-internet.herokuapp.com/basic_auth')
+        cy.wait(3000)
+    })
+
 })
