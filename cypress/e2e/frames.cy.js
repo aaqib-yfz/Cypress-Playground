@@ -1,5 +1,5 @@
 ///  <reference types = "cypress"/>
-
+import 'cypress-iframe'
 describe(' handling frames',()=>{
     it.skip('one app',()=>{
         cy.visit('https://the-internet.herokuapp.com/iframe');
@@ -18,7 +18,8 @@ describe(' handling frames',()=>{
     
     it('plugin',()=>{
         cy.visit('https://the-internet.herokuapp.com/iframe')
-        
+        cy.frameLoaded('#mce_0_ifr');
+        cy.iframe('#mce_0_ifr')
     })
 })
 
