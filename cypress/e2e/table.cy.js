@@ -5,6 +5,11 @@ describe( "handle table",()=>{
     });
 
     it('No of rows and columns',()=>{
-        cy.get('table#table1')
+        cy.get('table#table1 > tbody > tr').should('have.length','4');
+        cy.get('table#table1>thead>tr>th').should('have.length','6');
+    });
+
+    it('check cell data ',()=>{
+        
     })
 })
